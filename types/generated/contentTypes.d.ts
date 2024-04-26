@@ -806,7 +806,7 @@ export interface ApiAttendanceAttendance extends Schema.CollectionType {
       'manyToMany',
       'api::member.member'
     >;
-    status: Attribute.Boolean;
+    status: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
