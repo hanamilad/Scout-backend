@@ -26,9 +26,9 @@
     "number": {
       "type": "string"
     },
-    "attendance": {
+    "attendances": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::attendance.attendance",
       "inversedBy": "members"
     }

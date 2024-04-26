@@ -794,6 +794,7 @@ export interface ApiAttendanceAttendance extends Schema.CollectionType {
     singularName: 'attendance';
     pluralName: 'attendances';
     displayName: 'Attendance';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -802,7 +803,7 @@ export interface ApiAttendanceAttendance extends Schema.CollectionType {
     date: Attribute.Date;
     members: Attribute.Relation<
       'api::attendance.attendance',
-      'oneToMany',
+      'manyToMany',
       'api::member.member'
     >;
     status: Attribute.Boolean;
@@ -863,9 +864,9 @@ export interface ApiMemberMember extends Schema.CollectionType {
     description: Attribute.String;
     group: Attribute.String;
     number: Attribute.String;
-    attendance: Attribute.Relation<
+    attendances: Attribute.Relation<
       'api::member.member',
-      'manyToOne',
+      'manyToMany',
       'api::attendance.attendance'
     >;
     createdAt: Attribute.DateTime;

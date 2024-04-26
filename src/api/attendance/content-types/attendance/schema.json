@@ -4,7 +4,8 @@
   "info": {
     "singularName": "attendance",
     "pluralName": "attendances",
-    "displayName": "Attendance"
+    "displayName": "Attendance",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,9 +17,9 @@
     },
     "members": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::member.member",
-      "mappedBy": "attendance"
+      "mappedBy": "attendances"
     },
     "status": {
       "type": "boolean"
